@@ -1,0 +1,16 @@
+[data-theme="dark"] {
+  --ink: #f4f1ea;
+  --muted: #a7b5c5;
+  --paper: #102a43;
+  --paper-strong: #173a5e;
+  --line: rgba(244, 241, 234, 0.17);
+  --coral: #ff8a78;
+  --sun: #f2c14e;
+  --teal: #5bc0be;
+}
+[data-theme="light"] {
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+}
