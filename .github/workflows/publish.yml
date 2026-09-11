@@ -21,7 +21,7 @@ jobs:
           node-version: 24
       - name: Install frontend dependencies
         working-directory: frontend
-        run: npm install --no-audit --no-fund
+        run: npm install --no-audit --no-fund --no-package-lock
       - name: Validate, test, lint, and build frontend
         working-directory: frontend
         run: |
