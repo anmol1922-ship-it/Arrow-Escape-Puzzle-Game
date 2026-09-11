@@ -1,0 +1,274 @@
+openapi: 3.1.0
+info:
+  title: Arrow Escape Optional Guidance API
+  version: 1.0.0
+  description: |
+    Health and optional AI guidance for Arrow Escape. Core gameplay is local and
+    deterministic; clients must fall back to a local hint after any AI failure.
+servers:
+  - url: http://localhost:8000
+paths:
+  /health:
+    get:
+      summary: Return public service health
+      operationId: getHealth
+      responses:
+        "200":
+          description: Service is healthy
+          headers:
+            X-Request-ID:
+              $ref: "#/components/headers/RequestId"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthResponse"
+  /health/ready:
+    get:
+      summary: Return service readiness without exposing provider details
+      operationId: getReadiness
+      responses:
+        "200":
+          description: Service configuration is ready
+          headers:
+            X-Request-ID:
+              $ref: "#/components/headers/RequestId"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReadinessResponse"
+        "503":
+          $ref: "#/components/responses/ServiceUnavailable"
+  /api/v1/ai/hint:
+    post:
+      summary: Request optional AI guidance for a current puzzle snapshot
+      operationId: requestAiGuidance
+      parameters:
+        - $ref: "#/components/parameters/RequestId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AiGuidanceRequest"
+      responses:
+        "200":
+          description: Schema- and deterministically-validated AI guidance
+          headers:
+            X-Request-ID:
+              $ref: "#/components/headers/RequestId"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AiGuidanceResponse"
+        "400":
+          $ref: "#/components/responses/InvalidRequest"
+        "413":
+          $ref: "#/components/responses/RequestTooLarge"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+        "500":
+          $ref: "#/components/responses/InternalError"
+        "503":
+          $ref: "#/components/responses/ServiceUnavailable"
+components:
+  parameters:
+    RequestId:
+      name: X-Request-ID
+      in: header
+      required: false
+      schema:
+        type: string
+        maxLength: 128
+      description: Optional client correlation identifier. The server generates one when absent.
+  headers:
+    RequestId:
+      required: true
+      schema:
+        type: string
+      description: Safe correlation identifier for this response.
+  responses:
+    InvalidRequest:
+      description: Invalid puzzle snapshot or request data
+      headers:
+        X-Request-ID:
+          $ref: "#/components/headers/RequestId"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorEnvelope"
+          example:
+            error:
+              code: INVALID_REQUEST
+              message: Invalid puzzle state.
+              requestId: 7ced94d1-37aa-4f42-a5ba-cd88e08c4acd
+    RequestTooLarge:
+      description: Request exceeded the 64 KiB limit
+      headers:
+        X-Request-ID:
+          $ref: "#/components/headers/RequestId"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorEnvelope"
+    RateLimited:
+      description: More than 20 AI requests per minute from the client IP
+      headers:
+        X-Request-ID:
+          $ref: "#/components/headers/RequestId"
+        Retry-After:
+          required: true
+          schema:
+            type: integer
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorEnvelope"
+    InternalError:
+      description: Unexpected safe server failure
+      headers:
+        X-Request-ID:
+          $ref: "#/components/headers/RequestId"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorEnvelope"
+    ServiceUnavailable:
+      description: Optional service is unavailable; use a local hint
+      headers:
+        X-Request-ID:
+          $ref: "#/components/headers/RequestId"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorEnvelope"
+  schemas:
+    HealthResponse:
+      type: object
+      additionalProperties: false
+      required: [status, service, version]
+      properties:
+        status:
+          type: string
+          const: healthy
+        service:
+          type: string
+          const: arrow-escape-api
+        version:
+          type: string
+          pattern: '^\\d+\\.\\d+\\.\\d+$'
+    ReadinessResponse:
+      type: object
+      additionalProperties: false
+      required: [status, service, version]
+      properties:
+        status:
+          type: string
+          const: ready
+        service:
+          type: string
+          const: arrow-escape-api
+        version:
+          type: string
+          pattern: '^\\d+\\.\\d+\\.\\d+$'
+    Direction:
+      type: string
+      enum: [UP, DOWN, LEFT, RIGHT]
+    ActiveArrow:
+      type: object
+      additionalProperties: false
+      required: [id, row, column, direction]
+      properties:
+        id:
+          type: string
+          minLength: 1
+          maxLength: 64
+        row:
+          type: integer
+          minimum: 0
+          maximum: 6
+        column:
+          type: integer
+          minimum: 0
+          maximum: 6
+        direction:
+          $ref: "#/components/schemas/Direction"
+    AiGuidanceRequest:
+      type: object
+      additionalProperties: false
+      required: [puzzleId, boardSize, moves, mistakes, arrows, mode]
+      properties:
+        puzzleId:
+          type: string
+          minLength: 1
+          maxLength: 64
+        boardSize:
+          type: integer
+          minimum: 4
+          maximum: 7
+        moves:
+          type: integer
+          minimum: 0
+        mistakes:
+          type: integer
+          minimum: 0
+        arrows:
+          type: array
+          minItems: 1
+          maxItems: 49
+          items:
+            $ref: "#/components/schemas/ActiveArrow"
+        mode:
+          type: string
+          enum: [hint, explanation, coach]
+    AiGuidanceResponse:
+      type: object
+      additionalProperties: false
+      required: [arrowId, hint, reason, confidence, source, requestId]
+      properties:
+        arrowId:
+          type: string
+          minLength: 1
+          maxLength: 64
+        hint:
+          type: string
+          minLength: 1
+          maxLength: 280
+        reason:
+          type: string
+          minLength: 1
+          maxLength: 280
+        confidence:
+          type: number
+          minimum: 0
+          maximum: 1
+        source:
+          type: string
+          const: ai
+        requestId:
+          type: string
+    ErrorEnvelope:
+      type: object
+      additionalProperties: false
+      required: [error]
+      properties:
+        error:
+          type: object
+          additionalProperties: false
+          required: [code, message, requestId]
+          properties:
+            code:
+              type: string
+              enum:
+                [
+                  INVALID_REQUEST,
+                  REQUEST_TOO_LARGE,
+                  RATE_LIMITED,
+                  SERVICE_UNAVAILABLE,
+                  INTERNAL_ERROR,
+                  NOT_FOUND,
+                ]
+            message:
+              type: string
+              maxLength: 280
+            requestId:
+              type: string
