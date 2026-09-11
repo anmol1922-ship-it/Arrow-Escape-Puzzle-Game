@@ -1,8 +1,16 @@
 # Arrow Escape Build and Release
 
-V1 is browser-first and has no production auto-deployment. Build the frontend
-with `npm run build`; this validates all bundled levels, TypeScript, and the PWA
-asset graph. Run backend tests from `backend/` and probe `/health` before release.
+The frontend is deployed to GitHub Pages at:
+
+https://anmol1922-ship-it.github.io/Arrow-Escape-Puzzle-Game/
+
+The Pages workflow builds the Vite frontend with the project-site base path,
+creates a single-page-app fallback, and deploys only from `main`. Pull requests
+run the same frontend build without publishing a deployment.
+
+V1 is browser-first. The optional backend is not deployed with the frontend;
+AI guidance remains available through the configured API when that service is
+running, and local deterministic play remains fully functional without it.
 
 CI runs on pushes and pull requests. The release workflow runs only for `v*` tags
 after repeating required checks. It packages:

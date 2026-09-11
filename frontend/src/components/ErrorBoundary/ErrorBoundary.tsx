@@ -26,7 +26,7 @@ export class ErrorBoundary extends Component<PropsWithChildren, State> {
           <GameButton
             className="button-quiet"
             onClick={() => {
-              window.location.href = "/home";
+              window.location.href = `${import.meta.env.BASE_URL}home`;
             }}
           >
             Return home
