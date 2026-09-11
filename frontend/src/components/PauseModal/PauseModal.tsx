@@ -1,4 +1,5 @@
 import { GameButton } from "../GameButton/GameButton";
+import { useFocusReturn } from "../../hooks/useFocusReturn";
 
 export function PauseModal({
   onResume,
@@ -9,12 +10,16 @@ export function PauseModal({
   onRestart: () => void;
   onHome: () => void;
 }) {
+  const dialogRef = useFocusReturn<HTMLDivElement>(true);
+
   return (
     <div
       className="modal-backdrop"
       role="dialog"
       aria-modal="true"
       aria-labelledby="pause-title"
+      ref={dialogRef}
+      tabIndex={-1}
     >
       <div className="modal-panel">
         <span className="eyebrow">TAKE A BREATH</span>

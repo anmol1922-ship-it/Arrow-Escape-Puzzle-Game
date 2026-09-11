@@ -1,0 +1,92 @@
+:root {
+  --ae-font-display: "Space Grotesk", "Trebuchet MS", sans-serif;
+  --ae-font-body: "Space Grotesk", "Trebuchet MS", sans-serif;
+
+  --ae-color-background: #f4f1ea;
+  --ae-color-surface: #fffdf8;
+  --ae-color-surface-strong: #004040;
+  --ae-color-text: #004040;
+  --ae-color-text-muted: #64748b;
+  --ae-color-line: rgba(0, 64, 64, 0.14);
+  --ae-color-accent: #ffdf00;
+  --ae-color-accent-secondary: #2a9d8f;
+  --ae-color-success: #2a9d8f;
+  --ae-color-warning: #ffdf00;
+  --ae-color-error: #ef6f61;
+  --ae-color-focus: #ef6f61;
+  --ae-color-overlay: rgba(0, 64, 64, 0.68);
+  --ae-color-arrow: #ffdf00;
+  --ae-color-arrow-highlight: #fffdf8;
+  --ae-color-disabled: #a7b5c5;
+
+  --ae-space-1: 4px;
+  --ae-space-2: 8px;
+  --ae-space-3: 12px;
+  --ae-space-4: 16px;
+  --ae-space-5: 20px;
+  --ae-space-6: 24px;
+  --ae-space-7: 32px;
+  --ae-space-8: 40px;
+  --ae-space-9: 48px;
+  --ae-space-10: 64px;
+
+  --ae-radius-control: 12px;
+  --ae-radius-button: 16px;
+  --ae-radius-panel: 24px;
+  --ae-radius-board: 28px;
+
+  --ae-shadow-board: 0 18px 50px rgba(0, 64, 64, 0.12);
+  --ae-shadow-object: 8px 8px 0 rgba(0, 0, 0, 0.18);
+  --ae-shadow-focus: 0 0 0 3px var(--ae-color-focus);
+
+  --ae-duration-press: 120ms;
+  --ae-duration-feedback: 280ms;
+  --ae-duration-transition: 320ms;
+  --ae-duration-reward: 520ms;
+  --ae-ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  --ae-breakpoint-mobile: 480px;
+  --ae-breakpoint-tablet: 768px;
+  --ae-breakpoint-desktop: 1024px;
+  --ae-breakpoint-wide: 1440px;
+
+  --ae-z-base: 0;
+  --ae-z-decoration: 1;
+  --ae-z-board: 2;
+  --ae-z-feedback: 3;
+  --ae-z-status: 4;
+  --ae-z-modal: 10;
+  --ae-z-recovery: 20;
+
+  --ae-touch-target: 44px;
+  --ae-board-min: 180px;
+  --ae-board-max: 590px;
+  --ae-board-gap: 7px;
+  --ae-board-padding: 9px;
+}
+
+[data-theme="dark"] {
+  --ae-color-background: #004040;
+  --ae-color-surface: #075454;
+  --ae-color-surface-strong: #f4f1ea;
+  --ae-color-text: #f4f1ea;
+  --ae-color-text-muted: #a7b5c5;
+  --ae-color-line: rgba(244, 241, 234, 0.17);
+  --ae-color-accent-secondary: #5bc0be;
+  --ae-color-success: #5bc0be;
+  --ae-color-error: #ff8a78;
+  --ae-color-focus: #ff8a78;
+  --ae-color-overlay: rgba(0, 32, 32, 0.78);
+  --ae-color-arrow-highlight: #f4f1ea;
+  --ae-color-disabled: #718096;
+  --ae-shadow-board: 0 18px 50px rgba(0, 0, 0, 0.26);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ae-duration-press: 1ms;
+    --ae-duration-feedback: 1ms;
+    --ae-duration-transition: 1ms;
+    --ae-duration-reward: 1ms;
+  }
+}

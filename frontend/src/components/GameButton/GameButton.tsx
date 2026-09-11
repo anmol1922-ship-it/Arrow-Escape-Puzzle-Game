@@ -6,7 +6,11 @@ export function GameButton({
   ...props
 }: PropsWithChildren<ButtonHTMLAttributes<HTMLButtonElement>>) {
   return (
-    <button className={`game-button ${className}`} {...props}>
+    <button
+      className={`game-button ${className}`}
+      type={props.type ?? "button"}
+      {...props}
+    >
       {children}
     </button>
   );

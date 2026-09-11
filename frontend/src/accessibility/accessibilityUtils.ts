@@ -11,8 +11,14 @@ export function arrowLabel(
   row: number,
   column: number,
   direction: Direction,
+  state?: "clear" | "blocked" | "disabled" | "removed",
 ): string {
-  return `Arrow at row ${row + 1}, column ${column + 1}, pointing ${direction.toLowerCase()}`;
+  const base = `Arrow at row ${row + 1}, column ${column + 1}, pointing ${direction.toLowerCase()}`;
+  if (state === "blocked") return `${base}. Path blocked.`;
+  if (state === "clear") return `${base}. Path clear.`;
+  if (state === "disabled") return `${base}. Disabled.`;
+  if (state === "removed") return `${base}. Removed.`;
+  return base;
 }
 
 export function moveAnnouncement(kind: MoveKind): string {
