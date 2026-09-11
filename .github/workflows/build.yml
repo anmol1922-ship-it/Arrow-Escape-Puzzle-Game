@@ -1,0 +1,62 @@
+name: Arrow Escape Build Validation
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - develop
+      - "feature/**"
+  pull_request:
+    branches:
+      - main
+      - develop
+
+permissions:
+  contents: read
+
+jobs:
+  production-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci
+      - name: Validate, test, lint, and build frontend
+        working-directory: frontend
+        run: |
+          npm run validate:levels
+          npm run lint
+          npm run test -- --run
+          npm run build
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: backend/requirements*.txt
+      - name: Install backend dependencies
+        working-directory: backend
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt -r requirements-dev.txt
+      - name: Test backend
+        working-directory: backend
+        run: pytest
+      - name: Upload frontend build logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-validation-metadata
+          path: |
+            frontend/dist
+            frontend/test-results
+          if-no-files-found: ignore
