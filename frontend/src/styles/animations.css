@@ -26,11 +26,13 @@
       rotate(180deg);
   }
 }
+.arrow-state-escaping,
 .feedback-escaped {
-  animation: escape 0.28s ease-out;
+  animation: escape var(--ae-duration-feedback) var(--ae-ease-standard);
 }
+.arrow-state-blocked,
 .feedback-blocked {
-  animation: blocked 0.25s ease-in-out;
+  animation: blocked var(--ae-duration-feedback) var(--ae-ease-standard);
 }
 @keyframes escape {
   50% {
@@ -55,6 +57,8 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .arrow-state-escaping,
+  .arrow-state-blocked,
   .feedback-escaped,
   .feedback-blocked {
     animation: none;
