@@ -11,7 +11,9 @@ import { ParticleEffect } from "../../components/ParticleEffect/ParticleEffect";
 import { GameButton } from "../../components/GameButton/GameButton";
 import { useEscapeToPause } from "../../accessibility/keyboardNavigation";
 import { useNavigationRecovery } from "../../hooks/useNavigationRecovery";
-import { playFeedback } from "../../audio/audioService";
+import { useResponsiveGameBoard } from "../../hooks/useResponsiveGameBoard";
+import { useSound } from "../../hooks/useSound";
+import { useVibration } from "../../hooks/useVibration";
 
 export function Game() {
   const { levelId = "" } = useParams();
@@ -19,6 +21,9 @@ export function Game() {
   const level = getLevel(levelId);
   const session = useGame();
   const { attempt, recoveryCandidate, startLevel } = session;
+  const sound = useSound(session.settings);
+  const vibration = useVibration(session.settings.vibrationEnabled);
+  const board = useResponsiveGameBoard(level?.boardSize ?? 1);
 
   useEffect(() => {
     if (attempt?.levelId === levelId && attempt.status === "completed")
@@ -27,11 +32,6 @@ export function Game() {
   useEffect(() => {
     if (!attempt && !recoveryCandidate && level) startLevel(level.id);
   }, [attempt, level, recoveryCandidate, startLevel]);
-  useEffect(() => {
-    if (!attempt || attempt.status !== "active") return undefined;
-    const timer = window.setInterval(session.tick, 1000);
-    return () => window.clearInterval(timer);
-  }, [attempt, session.tick]);
   useEscapeToPause(Boolean(attempt?.status === "active"), session.pause);
   useNavigationRecovery(Boolean(attempt?.status === "active"));
 
@@ -60,9 +60,13 @@ export function Game() {
     );
 
   const feedbackKind =
-    session.feedback.kind === "blocked" || session.feedback.kind === "escaped"
-      ? session.feedback.kind
-      : null;
+    session.animation.name === "blocked-arrow"
+      ? "blocked"
+      : session.animation.name === "arrow-escaping"
+        ? "escaped"
+        : null;
+  const feedbackArrowId =
+    feedbackKind === null ? null : session.animation.arrowId;
   return (
     <main className="game-screen screen-shell">
       <GameHeader
@@ -78,30 +82,31 @@ export function Game() {
       <GameBoard
         level={level}
         attempt={attempt}
-        feedback={{ ...session.feedback, kind: feedbackKind }}
+        feedback={{ kind: feedbackKind, arrowId: feedbackArrowId }}
+        style={board.boardStyle}
+        containerRef={board.containerRef}
         onActivate={(arrowId) => {
-          session.moveArrow(arrowId);
-          if (session.feedback.kind)
-            playFeedback(
-              session.feedback.kind === "blocked" ? "blocked" : "success",
-              session.settings.soundEnabled,
-              session.settings.vibrationEnabled,
-            );
+          if (session.isAnimationBusy) return;
+          const kind = session.moveArrow(arrowId);
+          if (kind === "blocked") {
+            sound.playBlocked();
+            vibration.vibrateBlocked();
+          } else if (kind === "escaped") {
+            sound.playSuccess();
+            vibration.vibrateSuccess();
+          } else if (kind === "completed") {
+            sound.playComplete();
+            vibration.vibrateComplete();
+          }
         }}
       />
       <div className="game-bottom">
-        <HintButton
-          hint={session.hint}
-          onRequest={session.requestHint}
-          onAiRequest={() => {
-            void session.requestAiHint("coach");
-          }}
-        />
+        <HintButton hint={session.hint} onRequest={session.requestHint} />
         <p className="board-status" role="status">
           {session.announcement}
         </p>
       </div>
-      <ParticleEffect active={session.feedback.kind === "completed"} />
+      <ParticleEffect active={session.animation.name === "puzzle-completion"} />
       {attempt.status === "paused" && (
         <PauseModal
           onResume={session.resume}

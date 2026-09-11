@@ -1,10 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { GameButton } from "../../components/GameButton/GameButton";
 import { useGame } from "../../app/useGame";
+import { useBranding } from "../../branding/branding";
+import { BrandLogo } from "../../components/BrandLogo/BrandLogo";
 
 export function Home() {
   const navigate = useNavigate();
   const { progress } = useGame();
+  const { brand } = useBranding();
+  const activeLevelId = progress.activeAttempt?.levelId;
+  const primaryLabel = activeLevelId ? "Continue" : "Play now";
   return (
     <main className="home-screen screen-shell">
       <header className="topbar">
@@ -23,6 +28,7 @@ export function Home() {
       <section className="home-hero">
         <div className="hero-copy">
           <span className="eyebrow">A POCKET-SIZED PUZZLE</span>
+          <BrandLogo className="home-hero-logo" />
           <h1>
             Every arrow
             <br />
@@ -31,9 +37,12 @@ export function Home() {
           <p>Read the board. Find the opening. Let the arrows fly.</p>
           <GameButton
             className="button-primary"
-            onClick={() => navigate("/levels")}
+            data-primary-action="play-now"
+            onClick={() =>
+              navigate(activeLevelId ? `/game/${activeLevelId}` : "/levels")
+            }
           >
-            Play now <span aria-hidden="true">↗</span>
+            {primaryLabel} <span aria-hidden="true">↗</span>
           </GameButton>
         </div>
         <div className="hero-board" aria-hidden="true">
@@ -58,6 +67,15 @@ export function Home() {
       </nav>
       <footer className="home-footer">
         <span>BUILT FOR SHORT BREAKS</span>
+        <a
+          className="home-footer-brand"
+          href={brand.website}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <BrandLogo className="home-footer-logo" />
+          <span>{brand.slogan}</span>
+        </a>
         <span>NO SIGNAL NEEDED</span>
         <span>32 HAND-CRAFTED LEVELS</span>
       </footer>
