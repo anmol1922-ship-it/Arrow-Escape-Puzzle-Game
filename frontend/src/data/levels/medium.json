@@ -1,0 +1,151 @@
+[
+  {
+    "id": "level-009",
+    "title": "Measured Flow",
+    "difficulty": "medium",
+    "boardSize": 5,
+    "targetMoves": 6,
+    "targetTimeSeconds": 100,
+    "scoringProfileId": "medium",
+    "unlockOrder": 9,
+    "arrows": [
+      { "id": "a1", "row": 1, "column": 0, "direction": "RIGHT" },
+      { "id": "a2", "row": 1, "column": 1, "direction": "RIGHT" },
+      { "id": "a3", "row": 1, "column": 2, "direction": "RIGHT" },
+      { "id": "a4", "row": 1, "column": 3, "direction": "RIGHT" },
+      { "id": "a5", "row": 4, "column": 0, "direction": "RIGHT" },
+      { "id": "a6", "row": 0, "column": 4, "direction": "UP" }
+    ]
+  },
+  {
+    "id": "level-010",
+    "title": "Crosswind",
+    "difficulty": "medium",
+    "boardSize": 5,
+    "targetMoves": 6,
+    "targetTimeSeconds": 105,
+    "scoringProfileId": "medium",
+    "unlockOrder": 10,
+    "arrows": [
+      { "id": "a1", "row": 3, "column": 0, "direction": "RIGHT" },
+      { "id": "a2", "row": 3, "column": 1, "direction": "RIGHT" },
+      { "id": "a3", "row": 3, "column": 2, "direction": "RIGHT" },
+      { "id": "a4", "row": 0, "column": 0, "direction": "DOWN" },
+      { "id": "a5", "row": 1, "column": 0, "direction": "DOWN" },
+      { "id": "a6", "row": 4, "column": 4, "direction": "LEFT" }
+    ]
+  },
+  {
+    "id": "level-011",
+    "title": "Quiet Passage",
+    "difficulty": "medium",
+    "boardSize": 5,
+    "targetMoves": 7,
+    "targetTimeSeconds": 110,
+    "scoringProfileId": "medium",
+    "unlockOrder": 11,
+    "arrows": [
+      { "id": "a1", "row": 0, "column": 1, "direction": "DOWN" },
+      { "id": "a2", "row": 1, "column": 1, "direction": "DOWN" },
+      { "id": "a3", "row": 2, "column": 1, "direction": "DOWN" },
+      { "id": "a4", "row": 4, "column": 0, "direction": "RIGHT" },
+      { "id": "a5", "row": 4, "column": 2, "direction": "RIGHT" },
+      { "id": "a6", "row": 4, "column": 3, "direction": "RIGHT" },
+      { "id": "a7", "row": 0, "column": 4, "direction": "UP" }
+    ]
+  },
+  {
+    "id": "level-012",
+    "title": "Tidal Line",
+    "difficulty": "medium",
+    "boardSize": 5,
+    "targetMoves": 6,
+    "targetTimeSeconds": 115,
+    "scoringProfileId": "medium",
+    "unlockOrder": 12,
+    "arrows": [
+      { "id": "a1", "row": 2, "column": 0, "direction": "RIGHT" },
+      { "id": "a2", "row": 2, "column": 1, "direction": "RIGHT" },
+      { "id": "a3", "row": 2, "column": 2, "direction": "RIGHT" },
+      { "id": "a4", "row": 2, "column": 3, "direction": "RIGHT" },
+      { "id": "a5", "row": 0, "column": 0, "direction": "DOWN" },
+      { "id": "a6", "row": 4, "column": 4, "direction": "DOWN" }
+    ]
+  },
+  {
+    "id": "level-013",
+    "title": "Long Look",
+    "difficulty": "medium",
+    "boardSize": 5,
+    "targetMoves": 7,
+    "targetTimeSeconds": 120,
+    "scoringProfileId": "medium",
+    "unlockOrder": 13,
+    "arrows": [
+      { "id": "a1", "row": 0, "column": 0, "direction": "RIGHT" },
+      { "id": "a2", "row": 0, "column": 1, "direction": "RIGHT" },
+      { "id": "a3", "row": 0, "column": 2, "direction": "RIGHT" },
+      { "id": "a4", "row": 4, "column": 0, "direction": "RIGHT" },
+      { "id": "a5", "row": 4, "column": 1, "direction": "RIGHT" },
+      { "id": "a6", "row": 4, "column": 2, "direction": "RIGHT" },
+      { "id": "a7", "row": 2, "column": 4, "direction": "DOWN" }
+    ]
+  },
+  {
+    "id": "level-014",
+    "title": "North Star",
+    "difficulty": "medium",
+    "boardSize": 5,
+    "targetMoves": 7,
+    "targetTimeSeconds": 125,
+    "scoringProfileId": "medium",
+    "unlockOrder": 14,
+    "arrows": [
+      { "id": "a1", "row": 4, "column": 1, "direction": "UP" },
+      { "id": "a2", "row": 3, "column": 1, "direction": "UP" },
+      { "id": "a3", "row": 2, "column": 1, "direction": "UP" },
+      { "id": "a4", "row": 1, "column": 1, "direction": "UP" },
+      { "id": "a5", "row": 0, "column": 4, "direction": "RIGHT" },
+      { "id": "a6", "row": 4, "column": 4, "direction": "DOWN" },
+      { "id": "a7", "row": 0, "column": 0, "direction": "LEFT" }
+    ]
+  },
+  {
+    "id": "level-015",
+    "title": "Steady Hands",
+    "difficulty": "medium",
+    "boardSize": 5,
+    "targetMoves": 7,
+    "targetTimeSeconds": 130,
+    "scoringProfileId": "medium",
+    "unlockOrder": 15,
+    "arrows": [
+      { "id": "a1", "row": 1, "column": 0, "direction": "RIGHT" },
+      { "id": "a2", "row": 1, "column": 1, "direction": "RIGHT" },
+      { "id": "a3", "row": 1, "column": 2, "direction": "RIGHT" },
+      { "id": "a4", "row": 3, "column": 0, "direction": "RIGHT" },
+      { "id": "a5", "row": 3, "column": 1, "direction": "RIGHT" },
+      { "id": "a6", "row": 3, "column": 2, "direction": "RIGHT" },
+      { "id": "a7", "row": 4, "column": 4, "direction": "DOWN" }
+    ]
+  },
+  {
+    "id": "level-016",
+    "title": "Blue Current",
+    "difficulty": "medium",
+    "boardSize": 5,
+    "targetMoves": 7,
+    "targetTimeSeconds": 135,
+    "scoringProfileId": "medium",
+    "unlockOrder": 16,
+    "arrows": [
+      { "id": "a1", "row": 0, "column": 3, "direction": "DOWN" },
+      { "id": "a2", "row": 1, "column": 3, "direction": "DOWN" },
+      { "id": "a3", "row": 2, "column": 3, "direction": "DOWN" },
+      { "id": "a4", "row": 4, "column": 0, "direction": "RIGHT" },
+      { "id": "a5", "row": 4, "column": 1, "direction": "RIGHT" },
+      { "id": "a6", "row": 4, "column": 2, "direction": "RIGHT" },
+      { "id": "a7", "row": 0, "column": 0, "direction": "UP" }
+    ]
+  }
+]

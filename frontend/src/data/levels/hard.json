@@ -1,0 +1,169 @@
+[
+  {
+    "id": "level-017",
+    "title": "Tight Turn",
+    "difficulty": "hard",
+    "boardSize": 6,
+    "targetMoves": 8,
+    "targetTimeSeconds": 145,
+    "scoringProfileId": "hard",
+    "unlockOrder": 17,
+    "arrows": [
+      { "id": "a1", "row": 1, "column": 0, "direction": "RIGHT" },
+      { "id": "a2", "row": 1, "column": 1, "direction": "RIGHT" },
+      { "id": "a3", "row": 1, "column": 2, "direction": "RIGHT" },
+      { "id": "a4", "row": 1, "column": 3, "direction": "RIGHT" },
+      { "id": "a5", "row": 1, "column": 4, "direction": "RIGHT" },
+      { "id": "a6", "row": 4, "column": 0, "direction": "RIGHT" },
+      { "id": "a7", "row": 4, "column": 1, "direction": "RIGHT" },
+      { "id": "a8", "row": 5, "column": 5, "direction": "DOWN" }
+    ]
+  },
+  {
+    "id": "level-018",
+    "title": "Deep Water",
+    "difficulty": "hard",
+    "boardSize": 6,
+    "targetMoves": 8,
+    "targetTimeSeconds": 150,
+    "scoringProfileId": "hard",
+    "unlockOrder": 18,
+    "arrows": [
+      { "id": "a1", "row": 0, "column": 2, "direction": "DOWN" },
+      { "id": "a2", "row": 1, "column": 2, "direction": "DOWN" },
+      { "id": "a3", "row": 2, "column": 2, "direction": "DOWN" },
+      { "id": "a4", "row": 3, "column": 2, "direction": "DOWN" },
+      { "id": "a5", "row": 5, "column": 0, "direction": "RIGHT" },
+      { "id": "a6", "row": 5, "column": 1, "direction": "RIGHT" },
+      { "id": "a7", "row": 5, "column": 3, "direction": "RIGHT" },
+      { "id": "a8", "row": 0, "column": 5, "direction": "UP" }
+    ]
+  },
+  {
+    "id": "level-019",
+    "title": "Sunlit Grid",
+    "difficulty": "hard",
+    "boardSize": 6,
+    "targetMoves": 9,
+    "targetTimeSeconds": 155,
+    "scoringProfileId": "hard",
+    "unlockOrder": 19,
+    "arrows": [
+      { "id": "a1", "row": 2, "column": 0, "direction": "RIGHT" },
+      { "id": "a2", "row": 2, "column": 1, "direction": "RIGHT" },
+      { "id": "a3", "row": 2, "column": 2, "direction": "RIGHT" },
+      { "id": "a4", "row": 2, "column": 3, "direction": "RIGHT" },
+      { "id": "a5", "row": 2, "column": 4, "direction": "RIGHT" },
+      { "id": "a6", "row": 4, "column": 0, "direction": "RIGHT" },
+      { "id": "a7", "row": 4, "column": 1, "direction": "RIGHT" },
+      { "id": "a8", "row": 4, "column": 2, "direction": "RIGHT" },
+      { "id": "a9", "row": 0, "column": 0, "direction": "UP" }
+    ]
+  },
+  {
+    "id": "level-020",
+    "title": "Stone Bridge",
+    "difficulty": "hard",
+    "boardSize": 6,
+    "targetMoves": 8,
+    "targetTimeSeconds": 160,
+    "scoringProfileId": "hard",
+    "unlockOrder": 20,
+    "arrows": [
+      { "id": "a1", "row": 0, "column": 1, "direction": "DOWN" },
+      { "id": "a2", "row": 1, "column": 1, "direction": "DOWN" },
+      { "id": "a3", "row": 2, "column": 1, "direction": "DOWN" },
+      { "id": "a4", "row": 3, "column": 1, "direction": "DOWN" },
+      { "id": "a5", "row": 5, "column": 2, "direction": "LEFT" },
+      { "id": "a6", "row": 5, "column": 3, "direction": "LEFT" },
+      { "id": "a7", "row": 5, "column": 4, "direction": "LEFT" },
+      { "id": "a8", "row": 0, "column": 5, "direction": "RIGHT" }
+    ]
+  },
+  {
+    "id": "level-021",
+    "title": "High Tide",
+    "difficulty": "hard",
+    "boardSize": 6,
+    "targetMoves": 9,
+    "targetTimeSeconds": 165,
+    "scoringProfileId": "hard",
+    "unlockOrder": 21,
+    "arrows": [
+      { "id": "a1", "row": 1, "column": 0, "direction": "RIGHT" },
+      { "id": "a2", "row": 1, "column": 1, "direction": "RIGHT" },
+      { "id": "a3", "row": 1, "column": 2, "direction": "RIGHT" },
+      { "id": "a4", "row": 1, "column": 3, "direction": "RIGHT" },
+      { "id": "a5", "row": 4, "column": 0, "direction": "RIGHT" },
+      { "id": "a6", "row": 4, "column": 1, "direction": "RIGHT" },
+      { "id": "a7", "row": 4, "column": 2, "direction": "RIGHT" },
+      { "id": "a8", "row": 4, "column": 3, "direction": "RIGHT" },
+      { "id": "a9", "row": 5, "column": 5, "direction": "DOWN" }
+    ]
+  },
+  {
+    "id": "level-022",
+    "title": "Slow Orbit",
+    "difficulty": "hard",
+    "boardSize": 6,
+    "targetMoves": 9,
+    "targetTimeSeconds": 170,
+    "scoringProfileId": "hard",
+    "unlockOrder": 22,
+    "arrows": [
+      { "id": "a1", "row": 0, "column": 4, "direction": "DOWN" },
+      { "id": "a2", "row": 1, "column": 4, "direction": "DOWN" },
+      { "id": "a3", "row": 2, "column": 4, "direction": "DOWN" },
+      { "id": "a4", "row": 3, "column": 4, "direction": "DOWN" },
+      { "id": "a5", "row": 5, "column": 0, "direction": "RIGHT" },
+      { "id": "a6", "row": 5, "column": 1, "direction": "RIGHT" },
+      { "id": "a7", "row": 5, "column": 2, "direction": "RIGHT" },
+      { "id": "a8", "row": 5, "column": 3, "direction": "RIGHT" },
+      { "id": "a9", "row": 0, "column": 0, "direction": "LEFT" }
+    ]
+  },
+  {
+    "id": "level-023",
+    "title": "Red Compass",
+    "difficulty": "hard",
+    "boardSize": 6,
+    "targetMoves": 10,
+    "targetTimeSeconds": 175,
+    "scoringProfileId": "hard",
+    "unlockOrder": 23,
+    "arrows": [
+      { "id": "a1", "row": 2, "column": 0, "direction": "RIGHT" },
+      { "id": "a2", "row": 2, "column": 1, "direction": "RIGHT" },
+      { "id": "a3", "row": 2, "column": 2, "direction": "RIGHT" },
+      { "id": "a4", "row": 2, "column": 3, "direction": "RIGHT" },
+      { "id": "a5", "row": 2, "column": 4, "direction": "RIGHT" },
+      { "id": "a6", "row": 3, "column": 0, "direction": "RIGHT" },
+      { "id": "a7", "row": 3, "column": 1, "direction": "RIGHT" },
+      { "id": "a8", "row": 3, "column": 2, "direction": "RIGHT" },
+      { "id": "a9", "row": 3, "column": 3, "direction": "RIGHT" },
+      { "id": "a10", "row": 5, "column": 5, "direction": "DOWN" }
+    ]
+  },
+  {
+    "id": "level-024",
+    "title": "Hard Reset",
+    "difficulty": "hard",
+    "boardSize": 6,
+    "targetMoves": 10,
+    "targetTimeSeconds": 180,
+    "scoringProfileId": "hard",
+    "unlockOrder": 24,
+    "arrows": [
+      { "id": "a1", "row": 0, "column": 0, "direction": "DOWN" },
+      { "id": "a2", "row": 1, "column": 0, "direction": "DOWN" },
+      { "id": "a3", "row": 2, "column": 0, "direction": "DOWN" },
+      { "id": "a4", "row": 3, "column": 0, "direction": "DOWN" },
+      { "id": "a5", "row": 5, "column": 1, "direction": "LEFT" },
+      { "id": "a6", "row": 5, "column": 2, "direction": "LEFT" },
+      { "id": "a7", "row": 5, "column": 3, "direction": "LEFT" },
+      { "id": "a8", "row": 5, "column": 4, "direction": "LEFT" },
+      { "id": "a9", "row": 0, "column": 5, "direction": "RIGHT" },
+      { "id": "a10", "row": 3, "column": 5, "direction": "DOWN" }
+    ]
+  }
+]

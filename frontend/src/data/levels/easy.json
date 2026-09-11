@@ -1,0 +1,133 @@
+[
+  {
+    "id": "level-001",
+    "title": "First Steps",
+    "difficulty": "easy",
+    "boardSize": 4,
+    "targetMoves": 3,
+    "targetTimeSeconds": 60,
+    "scoringProfileId": "easy",
+    "unlockOrder": 1,
+    "arrows": [
+      { "id": "a1", "row": 1, "column": 0, "direction": "RIGHT" },
+      { "id": "a2", "row": 1, "column": 1, "direction": "RIGHT" },
+      { "id": "a3", "row": 0, "column": 3, "direction": "DOWN" }
+    ]
+  },
+  {
+    "id": "level-002",
+    "title": "Open Horizon",
+    "difficulty": "easy",
+    "boardSize": 4,
+    "targetMoves": 4,
+    "targetTimeSeconds": 65,
+    "scoringProfileId": "easy",
+    "unlockOrder": 2,
+    "arrows": [
+      { "id": "a1", "row": 0, "column": 0, "direction": "RIGHT" },
+      { "id": "a2", "row": 0, "column": 1, "direction": "RIGHT" },
+      { "id": "a3", "row": 2, "column": 2, "direction": "DOWN" },
+      { "id": "a4", "row": 3, "column": 0, "direction": "LEFT" }
+    ]
+  },
+  {
+    "id": "level-003",
+    "title": "Gentle Current",
+    "difficulty": "easy",
+    "boardSize": 4,
+    "targetMoves": 4,
+    "targetTimeSeconds": 70,
+    "scoringProfileId": "easy",
+    "unlockOrder": 3,
+    "arrows": [
+      { "id": "a1", "row": 2, "column": 0, "direction": "RIGHT" },
+      { "id": "a2", "row": 2, "column": 1, "direction": "RIGHT" },
+      { "id": "a3", "row": 2, "column": 2, "direction": "RIGHT" },
+      { "id": "a4", "row": 0, "column": 0, "direction": "UP" }
+    ]
+  },
+  {
+    "id": "level-004",
+    "title": "Two Lanes",
+    "difficulty": "easy",
+    "boardSize": 5,
+    "targetMoves": 5,
+    "targetTimeSeconds": 75,
+    "scoringProfileId": "easy",
+    "unlockOrder": 4,
+    "arrows": [
+      { "id": "a1", "row": 1, "column": 0, "direction": "RIGHT" },
+      { "id": "a2", "row": 1, "column": 1, "direction": "RIGHT" },
+      { "id": "a3", "row": 1, "column": 2, "direction": "RIGHT" },
+      { "id": "a4", "row": 3, "column": 3, "direction": "DOWN" },
+      { "id": "a5", "row": 4, "column": 0, "direction": "LEFT" }
+    ]
+  },
+  {
+    "id": "level-005",
+    "title": "Soft Corners",
+    "difficulty": "easy",
+    "boardSize": 5,
+    "targetMoves": 4,
+    "targetTimeSeconds": 80,
+    "scoringProfileId": "easy",
+    "unlockOrder": 5,
+    "arrows": [
+      { "id": "a1", "row": 0, "column": 4, "direction": "DOWN" },
+      { "id": "a2", "row": 1, "column": 4, "direction": "DOWN" },
+      { "id": "a3", "row": 4, "column": 1, "direction": "LEFT" },
+      { "id": "a4", "row": 3, "column": 1, "direction": "UP" }
+    ]
+  },
+  {
+    "id": "level-006",
+    "title": "Clear Signal",
+    "difficulty": "easy",
+    "boardSize": 5,
+    "targetMoves": 5,
+    "targetTimeSeconds": 85,
+    "scoringProfileId": "easy",
+    "unlockOrder": 6,
+    "arrows": [
+      { "id": "a1", "row": 4, "column": 0, "direction": "RIGHT" },
+      { "id": "a2", "row": 4, "column": 1, "direction": "RIGHT" },
+      { "id": "a3", "row": 4, "column": 2, "direction": "RIGHT" },
+      { "id": "a4", "row": 0, "column": 0, "direction": "DOWN" },
+      { "id": "a5", "row": 0, "column": 3, "direction": "UP" }
+    ]
+  },
+  {
+    "id": "level-007",
+    "title": "Bright Exit",
+    "difficulty": "easy",
+    "boardSize": 5,
+    "targetMoves": 5,
+    "targetTimeSeconds": 90,
+    "scoringProfileId": "easy",
+    "unlockOrder": 7,
+    "arrows": [
+      { "id": "a1", "row": 2, "column": 0, "direction": "RIGHT" },
+      { "id": "a2", "row": 2, "column": 1, "direction": "RIGHT" },
+      { "id": "a3", "row": 2, "column": 2, "direction": "RIGHT" },
+      { "id": "a4", "row": 0, "column": 4, "direction": "RIGHT" },
+      { "id": "a5", "row": 4, "column": 4, "direction": "DOWN" }
+    ]
+  },
+  {
+    "id": "level-008",
+    "title": "Easy Rhythm",
+    "difficulty": "easy",
+    "boardSize": 5,
+    "targetMoves": 5,
+    "targetTimeSeconds": 95,
+    "scoringProfileId": "easy",
+    "unlockOrder": 8,
+    "arrows": [
+      { "id": "a1", "row": 1, "column": 0, "direction": "RIGHT" },
+      { "id": "a2", "row": 1, "column": 1, "direction": "RIGHT" },
+      { "id": "a3", "row": 1, "column": 2, "direction": "RIGHT" },
+      { "id": "a4", "row": 3, "column": 4, "direction": "DOWN" },
+      { "id": "a5", "row": 4, "column": 2, "direction": "LEFT" }
+    ]
+  }
+]
