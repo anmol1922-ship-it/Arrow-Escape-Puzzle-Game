@@ -1,0 +1,10 @@
+{
+  "name": "Arrow Escape",
+  "short_name": "Arrow Escape",
+  "description": "A tactile directional arrow escape puzzle game.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f1ea",
+  "theme_color": "#102a43",
+  "icons": []
+}
